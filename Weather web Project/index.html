@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Weather | Nurture Nature</title>
+    <link rel="stylesheet" href="sty.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="weather-bg"></div>
+    <div id="lightning-layer"></div>
+
+    <div class="container fade-in">
+        <header>
+            <h1>Aura Weather</h1>
+            <p>Nurture nature, one forecast at a time.</p>
+        </header>
+
+        <section class="search-section">
+            <div class="method-toggle">
+                <button id="btn-manual" class="active">Name</button>
+                <button id="btn-pincode">Pincode</button>
+                <button id="btn-current">Current</button>
+            </div>
+            <div class="search-box">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="search-input" placeholder="Enter City, Country or Landmark...">
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="error-msg" class="error-msg hidden"></div>
+        </section>
+
+        <section id="quick-picks" class="quick-picks">
+            <button onclick="search('Lucknow, India')">Lucknow</button>
+            <button onclick="search('Mumbai')">Mumbai</button>
+            <button onclick="search('Delhi')">Delhi</button>
+            <button onclick="search('London')">London</button>
+            <button onclick="search('Tokyo')">Tokyo</button>
+            <button onclick="search('New York')">New York</button>
+        </section>
+
+        <div id="loading" class="loading hidden">
+            <i data-lucide="loader-2" class="spin"></i>
+            <p>Tuning into Nature...</p>
+        </div>
+
+        <section id="result-section" class="hidden">
+            <div class="glass main-card">
+                <h2 id="city-name-label">Current Mood in</h2>
+                <h1 id="city-name-value">Lucknow</h1>
+                
+                <div class="weather-main">
+                    <div id="weather-icon-large"></div>
+                    <div class="temp-box">
+                        <span id="temp-value">40</span>°
+                        <p>Feels like home</p>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat">
+                        <p class="stat-label">Gentle Wind</p>
+                        <p id="wind-value" class="stat-value">12 km/h</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-label">Earth Humidity</p>
+                        <p class="stat-value">Fresh 🌿</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="nature-quote-box" class="glass quote-card">
+                <div id="quote-icon"></div>
+                <p id="quote-text"></p>
+            </div>
+
+            <div class="forecast-header">
+                <h3>Journey Through Time</h3>
+                <div class="forecast-toggle">
+                    <button id="btn-after" class="active">After</button>
+                    <button id="btn-before">Before</button>
+                </div>
+            </div>
+
+            <div id="forecast-grid" class="forecast-grid"></div>
+        </section>
+
+        <footer>
+            <p>Made with <i data-lucide="heart" style="fill: #ef4444; color: #ef4444; width: 16px;"></i> for our beautiful Planet Earth.</p>
+        </footer>
+    </div>
+
+    <script src="sc.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

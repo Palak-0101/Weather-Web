@@ -1,0 +1,313 @@
+:root {
+    --bg-pastel-blue: #e0f2fe;
+    --bg-pastel-green: #f0fdf4;
+    --bg-pastel-yellow: #fefce8;
+    --bg-pastel-pink: #fdf2f8;
+    --bg-soft-blue: #dbeafe;
+    --text-main: #1e293b;
+    --text-soft: #64748b;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Comfortaa', cursive;
+    color: var(--text-main);
+    background: var(--bg-pastel-blue);
+    transition: background 0.8s ease;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #334155;
+}
+
+header p {
+    color: var(--text-soft);
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+}
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+}
+
+/* SEARCH SECTION */
+.search-section {
+    margin-bottom: 1rem;
+}
+
+.method-toggle {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.method-toggle button {
+    background: white;
+    color: #64748b;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.method-toggle button.active {
+    background: #3b82f6;
+    color: white;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    width: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    outline: none;
+}
+
+.search-box button {
+    padding: 0 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    font-weight: 600;
+    color: #3b82f6;
+    cursor: pointer;
+}
+
+.quick-picks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.quick-picks button {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    color: var(--text-soft);
+    font-weight: 500;
+}
+
+/* CARDS */
+.main-card {
+    padding: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.weather-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.temp-box {
+    text-align: left;
+}
+
+#temp-value {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 2rem;
+}
+
+.stat-label {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.quote-card {
+    padding: 1.5rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.forecast-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0 1.5rem;
+}
+
+.forecast-toggle {
+    background: var(--glass-bg);
+    padding: 4px;
+    border-radius: 14px;
+    display: flex;
+    gap: 4px;
+}
+
+.forecast-toggle button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 11px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    font-weight: 500;
+}
+
+.forecast-toggle button.active {
+    background: #3b82f6;
+    color: white;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.forecast-card {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* ANIMATIONS */
+@keyframes rain {
+    0% { transform: translateY(-20vh) rotate(15deg); opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { transform: translateY(100vh) rotate(15deg); opacity: 0; }
+}
+
+.raindrop {
+    position: absolute;
+    background-color: rgba(56, 189, 248, 0.6);
+    width: 2px;
+    height: 20px;
+    top: -20px;
+    animation: rain linear infinite;
+}
+
+@keyframes snow {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+    33% { transform: translateY(30vh) translateX(20px) rotate(120deg); }
+    66% { transform: translateY(60vh) translateX(-20px) rotate(240deg); }
+    100% { transform: translateY(110vh) translateX(0) rotate(360deg); opacity: 0; }
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: snow linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes sunpulse {
+    0% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.2); opacity: 0.2; }
+    100% { transform: scale(1); opacity: 0.4; }
+}
+
+.sun-ray {
+    position: absolute;
+    background: radial-gradient(circle, rgba(253, 224, 71, 0.4) 0%, rgba(253, 224, 71, 0) 70%);
+    border-radius: 50%;
+    animation: sunpulse 4s ease-in-out infinite;
+}
+
+.lightning-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes lightning-flash {
+    0%, 90%, 100% { background: transparent; }
+    92% { background: rgba(255, 255, 255, 0.4); }
+    94% { background: transparent; }
+    96% { background: rgba(255, 255, 255, 0.6); }
+    98% { background: transparent; }
+}
+
+.lightning-active {
+    animation: lightning-flash 8s infinite;
+}
+
+.fade-in { animation: fadeIn 0.8s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.hidden { display: none !important; }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+footer {
+    margin-top: 5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    color: var(--text-soft);
+}

@@ -1,3 +1,9 @@
-# Weather-Web
-This project will tell about the current temperature of the entered city with some interactive animations . 
-It can tell the temperature of city by manually entering the name or using current location,I have also addded the feature of fetching through postal code but it is not working currently , will fix it soon.
+🌤️ #Weather-Web
+
+A simple, interactive weather web app that shows the current temperature of any city you search for, with smooth animations that make checking the weather more fun.
+
+✨ #Features
+🔍 Search by city name – type any city and get its current temperature instantly.
+📍 Use your current location – one click to see the weather where you are.
+🎞️ Interactive animations – visual effects that respond to the weather display.
+🚧 Search by postal code – added but currently not working
